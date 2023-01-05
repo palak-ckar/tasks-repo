@@ -107,7 +107,7 @@ int main()
     
     while(choice!=6)
     {
-        printf("Enter your choice:\n1: Insertion of details\n2: Searching the details with name\n3: Updating the data using product id\n4: Deletion of details\n5: Print the details\n6:Exit\n");
+        printf("\nEnter your choice:\n1: Insertion of details\n2: Searching the details with name\n3: Updating the data using product id\n4: Deletion of details\n5: Print the details\n6:Exit\n");
         scanf("%d", &choice);
         if(choice == 1)
         {
