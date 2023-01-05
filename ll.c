@@ -130,6 +130,10 @@ int main()
         {
             printll(head);
         }
+        else if(choice == 6)
+        {
+            printf("You have opted for exit!\n");
+        }
         else
         {
             printf("Invalid Option!\n");
