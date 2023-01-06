@@ -36,7 +36,7 @@ class triangle
         //virtual void getPerimeter()
         p=0;
         a=0.5*b*h;
-        cout<<"Triangle\n"<<b<<" "<<h<<"\nPerimeter cannot be determined "<<p<<"\nArea = "<<a<<"\n";
+        cout<<"\nTriangle\n"<<b<<" "<<h<<"\nPerimeter cannot be determined "<<p<<"\nArea = "<<a<<"\n";
     }
 };
 int main()
