@@ -52,6 +52,6 @@ int main()
         else if(shape[i]=="triangle")
             triangle t1;
         else
-            cout<<"Invalid input\n";
+            cout<<"Invalid input!\n";
     }
 }
