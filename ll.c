@@ -69,6 +69,21 @@ void update(struct Product *head_of_node)
         new_product=new_product->next;
     }
 }
+void find(struct Product *head_of_node)
+{
+    int product_id;
+    printf("Enter the ID you want to search for: ");
+    scanf("%d", &product_id);
+    struct Product *temp_product = head_of_node;
+    while(temp_product!=NULL)
+    {
+        if(temp_product->id == product_id)
+        {
+            printf("%s\t%d\t%d\n", temp_product->name, temp_product->id, temp_product->cost);
+        }
+        temp_product=temp_product->next;
+    }
+}
 void deletion(struct Product **head_of_node)
 {
     int delete_id;
@@ -109,12 +124,10 @@ void saving(struct Product *head_of_node)
     printf("Data added!\n");
     printf("\nThe file now contains:\n");
     char arr[255];
-    //struct Product *read;
     FILE *fo = fopen("product.txt", "r");
     while(fgets(arr, 255, (FILE*)fo))
     {
         printf(arr);
-        //read=read->next;
     }
     fclose(fo);
     printf("\n");
@@ -128,9 +141,9 @@ int main()
     head = first;
     first->next = NULL;
     
-    while(choice!=7)
+    while(choice!=8)
     {
-        printf("Enter your choice:\n1: Insertion of details\n2: Searching the details with name\n3: Updating the data using product id\n4: Deletion of details\n5: Print the details\n6: Save the details into a file named Product.txt \n7: Exit\n");
+        printf("Enter your choice:\n1: Insertion of details\n2: Searching the details with name\n3: Updating the data using product id\n4: Deletion of details\n5: Find by Product ID\n6: Print the details\n7: Save the details into a file named Product.txt \n8: Exit\n");
         scanf("%d", &choice);
         if(choice == 1)
         {
@@ -140,24 +153,27 @@ int main()
         {
             searching(head);
         }
-         else if(choice == 3)
-         {
+        else if(choice == 3)
+        {
             update(head);
-         }
-                
+        }
         else if(choice == 4)
         {
             deletion(&head);
         }
         else if(choice == 5)
         {
-            printll(head);
+            find(head);
         }
         else if(choice == 6)
         {
-            saving(head);
+            printll(head);
         }
         else if(choice == 7)
+        {
+            saving(head);
+        }
+        else if(choice == 8)
         {
             printf("You have opted for exit!\n");
         }
