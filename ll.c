@@ -96,6 +96,29 @@ void deletion(struct Product **head_of_node)
     prev->next = new_product->next;
     free(new_product);
 }
+void saving(struct Product *head_of_node)
+{
+    FILE *fp = fopen("product.txt", "w");
+    fprintf(fp, "Product name\tProduct ID\tPrice\n");
+    while(head_of_node!=NULL)
+    {
+        fprintf(fp, "%s\t%d\t%d\n", head_of_node->name, head_of_node->id, head_of_node->cost);
+        head_of_node=head_of_node->next;
+    }
+    fclose(fp);
+    printf("Data added!\n");
+    printf("\nThe file now contains:\n");
+    char arr[255];
+    //struct Product *read;
+    FILE *fo = fopen("product.txt", "r");
+    while(fgets(arr, 255, (FILE*)fo))
+    {
+        printf(arr);
+        //read=read->next;
+    }
+    fclose(fo);
+    printf("\n");
+}
 int main()
 {
     int choice;
@@ -105,9 +128,9 @@ int main()
     head = first;
     first->next = NULL;
     
-    while(choice!=6)
+    while(choice!=7)
     {
-        printf("\nEnter your choice:\n1: Insertion of details\n2: Searching the details with name\n3: Updating the data using product id\n4: Deletion of details\n5: Print the details\n6:Exit\n");
+        printf("Enter your choice:\n1: Insertion of details\n2: Searching the details with name\n3: Updating the data using product id\n4: Deletion of details\n5: Print the details\n6: Save the details into a file named Product.txt \n7: Exit\n");
         scanf("%d", &choice);
         if(choice == 1)
         {
@@ -132,11 +155,15 @@ int main()
         }
         else if(choice == 6)
         {
+            saving(head);
+        }
+        else if(choice == 7)
+        {
             printf("You have opted for exit!\n");
         }
         else
         {
-            printf("Invalid Option!\n");
+            printf("Invalid option!\n");
         }
     }
 }
