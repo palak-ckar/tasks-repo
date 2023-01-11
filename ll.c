@@ -21,15 +21,23 @@ void insertion(struct Product **head_of_node)
     new_product -> cost = price;
     new_product->next = (*head_of_node);
     (*head_of_node)=new_product;
+    (*head_of_node)->next=NULL;
     printf("Data entered!\n");
 }
 void printll(struct Product *head_of_node)
 {
-    while(head_of_node!=NULL)
+    // while(head_of_node!=NULL)
+    // {
+    //     printf("%s\t%d\t%d\n", head_of_node->name, head_of_node->id, head_of_node->cost);
+    //     head_of_node=head_of_node->next;
+    // }
+    char arr[255];
+    FILE *fo = fopen("product.txt", "r");
+    while(fgets(arr, 255, (FILE*)fo))
     {
-        printf("%s\t%d\t%d\n", head_of_node->name, head_of_node->id, head_of_node->cost);
-        head_of_node=head_of_node->next;
+        printf(arr);
     }
+    fclose(fo);
 }
 void searching(struct Product *head_of_node)
 {
@@ -113,8 +121,8 @@ void deletion(struct Product **head_of_node)
 }
 void saving(struct Product *head_of_node)
 {
-    FILE *fp = fopen("product.txt", "w");
-    fprintf(fp, "Product name\tProduct ID\tPrice\n");
+    FILE *fp = fopen("product.txt", "a");
+    //fprintf(fp, "Product name\tProduct ID\tPrice\n");
     while(head_of_node!=NULL)
     {
         fprintf(fp, "%s\t%d\t%d\n", head_of_node->name, head_of_node->id, head_of_node->cost);
@@ -122,24 +130,25 @@ void saving(struct Product *head_of_node)
     }
     fclose(fp);
     printf("Data added!\n");
-    printf("\nThe file now contains:\n");
-    char arr[255];
-    FILE *fo = fopen("product.txt", "r");
-    while(fgets(arr, 255, (FILE*)fo))
-    {
-        printf(arr);
-    }
-    fclose(fo);
+    // printf("\nThe file now contains:\n");
+    // char arr[255];
+    // FILE *fo = fopen("product.txt", "r");
+    // while(fgets(arr, 255, (FILE*)fo))
+    // {
+    //     printf(arr);
+    // }
+    // fclose(fo);
     printf("\n");
 }
 int main()
 {
     int choice;
-    struct Product *head=NULL;
-    struct Product *first = (struct Product*)malloc(sizeof(struct Product));
-    strcpy(first->name, "Microsoft"); first->id = 4401; first -> cost = 55000;
-    head = first;
-    first->next = NULL;
+    struct Product *head;
+    //struct Product *first = (struct Product*)malloc(sizeof(struct Product));
+    //strcpy(first->name, "Microsoft"); first->id = 4401; first -> cost = 55000;
+    //head = first;
+    //first->next = NULL;
+    head->next = NULL;
     
     while(choice!=8)
     {
