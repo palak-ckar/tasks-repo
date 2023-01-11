@@ -122,7 +122,6 @@ void deletion(struct Product **head_of_node)
 void saving(struct Product *head_of_node)
 {
     FILE *fp = fopen("product.txt", "a");
-    //fprintf(fp, "Product name\tProduct ID\tPrice\n");
     while(head_of_node!=NULL)
     {
         fprintf(fp, "%s\t%d\t%d\n", head_of_node->name, head_of_node->id, head_of_node->cost);
