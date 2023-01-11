@@ -1,0 +1,7 @@
+Product name	Product ID	Price
+ipad	3486	90000
+Microsoft	4401	55000
+lenovo	4577	12000
+oppo	3476	10000
+Intel	2360	10000
+vivo	3489	15000
