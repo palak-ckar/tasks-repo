@@ -10,7 +10,7 @@
 * 
 
 # :bulb: Overview :bulb:
-This is Self Test for the POC which gives the overview of states of all the devices connected to the board i.e the driver settings of I2C bus.
+This is Self Test for the Setting Driver of I2C bus which gives the overview of states of all the devices connected to the board.
 
 - It consists I2C bus or  I²C bus which has the details of devices' name, its chip address, register's address, value, delay, register size and data size.
 - At start there are 3 uart states that are considered, uart state (0x1), uart state (0x2) and uart state (0x4). 
