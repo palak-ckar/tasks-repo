@@ -1,5 +1,5 @@
 
-<h1 align="center" style="font-weight: 700;">	
+<h1 align="center" style="font-weight: 900;">	
 	Self Test
 </h1>
 
