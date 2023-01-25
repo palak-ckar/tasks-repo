@@ -42,4 +42,4 @@ The most important characteristics are:
 >SDA: data signal line (Serial DAta)
 >SCL: clock signal line (Serial CLock)
 ### I²C Working
-<1> gctdytdy
+1> gctdytdy
