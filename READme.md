@@ -4,7 +4,6 @@
 </h1>
 
 # 📝Pre-requisites 📝
-* There should be no device connected to board (like Foot Switch, Laser Beam).
 * TX and RX pins should be shorted beforing connecting.
 * Serial Port baud rate must be set to 115200.
 * All the previous data of the board must be killed.
