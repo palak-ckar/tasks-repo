@@ -14,7 +14,7 @@ After the present state of all the devices are recorded, uart initializes USBs' 
 
 And all of the data is stored in a file named "TestResult.log".
 
-# 🔍Terminologies:mag:
+# 🔍Annotation:mag:
 
 ## I2C bus or  I²C bus
 Philips created the I2C bus in the early 1980s to make it simple for components that are housed on the same circuit board to communicate with one another. In 2006, Philips Semiconductors switched to NXP. I2C, the name, stands for "Inter IC."
@@ -30,3 +30,5 @@ The most important characteristics are:
 • All elements have basic master/slave interactions. Software addresses each device connected to the bus with a different address.
 
 • I2C is a genuine multi-master bus that offers collision avoidance and arbitration.
+
+### I²C Terminology
