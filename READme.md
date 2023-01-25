@@ -23,13 +23,10 @@ I2C is used to connect components that are connected via cable in addition to be
 
 The most important characteristics are:
 
-• There are only two bus lines required.
-	
-• There are no strict baud rate specifications, and the master creates a bus clock.
-
-• All elements have basic master/slave interactions. Software addresses each device connected to the bus with a different address.
-
-• I2C is a genuine multi-master bus that offers collision avoidance and arbitration.
+- There are only two bus lines required.
+- There are no strict baud rate specifications, and the master creates a bus clock.
+- All elements have basic master/slave interactions. Software addresses each device connected to the bus with a different address.
+- I2C is a genuine multi-master bus that offers collision avoidance and arbitration.
 
 ### I²C Terminology
 >Transmitter: the device the bus receives data from. A transmitter can be a device that uploads data to the bus on its own (referred to as a "master-transmitter") or one that receives data requests from other devices (referred to as a "slave-transmitter").
@@ -42,4 +39,17 @@ The most important characteristics are:
 >SDA: data signal line (Serial DAta)
 >SCL: clock signal line (Serial CLock)
 ### I²C Working
-1> gctdytdy
+* I²C uses only 2 bi-directional open-drain lines for data communication called SDA and SCL. Both these lines are pulled high. I2C operates in 2 modes - Master mode & Slave mode. Each data bit transferred on SDA line is synchronized by a high to the low pulse of each clock on the SCL line.
+* I2C standards state that the data line can only be altered when the clock line is low and not when it is high. Since the devices on the I2C bus are active low, a pull-up resistor is needed to make the two open drain lines high. 9-bit packets made up of the data are used for transmission. These bits are in the following order:
+	*  Start Condition – 1 bit
+	*  Slave Address – 8 bit
+	*  Acknowledge – 1 bit
+* Wait until it sees no activity on the I2 C bus. SDA and SCL are both high. The bus is 'free'.
+* Put a message on the bus that says 'its mine' - I have STARTED to use the bus. All other ICs then LISTEN to the bus data to see whether they might be the one who will be called up (addressed).
+* Provide on the CLOCK (SCL) wire a clock signal. It will be used by all the ICs as the reference time at which each bit of DATA on the data (SDA) wire will be correct (valid) and can be used. The data on the data wire (SDA) must be valid at the time the clock wire (SCL) switches from 'low' to 'high' voltage.
+* Put out in serial form the unique binary 'address' (name) of the IC that it wants to communicate with.
+* Put a message (one bit) on the bus telling whether it wants to SEND or RECEIVE data from the other chip.
+* Ask the other IC to ACKNOWLEDGE (using one bit) that it recognized its address and is ready to communicate.
+* The first IC sends or receives as many 8-bit words of data as it wants. After every 8-bit data word the sending IC expects the receiving IC to acknowledge the transfer is going OK.
+* When all the data is finished the first chip must free up the bus and it does that by a special message called 'STOP'. It is just one bit of information transferred by a special 'wiggling' of the SDA/SCL wires of the bus.
+The bus rules say that when data or addresses are being sent, the DATA wire is only allowed to be changed in voltage (so, '1', '0') when the voltage on the clock line is LOW. The 'start' and 'stop' special messages BREAK that rule, and that is how they are recognized as special.
