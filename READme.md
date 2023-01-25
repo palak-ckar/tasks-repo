@@ -19,10 +19,16 @@ This is Self Test for the POC which gives the overview of states of all the devi
 - Now the devices' states are checked and uart states are assigned to the devices accordingly. 
 - For both the HDMI ADV7513, it assigns uart state 0x1 and 0x2 respectively.
 	- Initially the I2C Bus assigned to 0x70 so that it selects HDMI encoder 
-	- Then it points the value to 0x1 and 0x2 in MUX respectively, later it checks if the the address of data and the expected is same or not and shows "Pass" or "Fail" correspondingly. 
-- For Temperature Sensor, Camera Bridge and LED Driver, the uart states assigned is 0x4. 
-- For Temperature Sensor, it reads the value and assigns new value to Temperature Sensor by checking if register size is more than 1, if yes, it  and checks if the value is neither 0x00 nor 0xFF, it declares it as "Pass" otherwise "Fail". 
-- After the present state of all the devices are recorded, uart initializes USBs' address in the board and baud rate 115200, then it checks for existence, if it exists, it shows "Pass" and proceeds to check if the message sent and received is same, it is considered as loopback "Pass" and if its not, it is considered as "Fail", and if the file is not found, existence and loopback both are displayed as "Fail".
+	- Then it points the value to 0x1 and 0x2 in MUX respectively
+	- Later it checks if the the address of data and the expected is same or not and shows "Pass" or "Fail" correspondingly. 
+- For others like Temperature Sensor, Camera Bridge and LED Driver, the uart states assigned is 0x4. 
+- For Temperature Sensor, it reads the value and assigns new value to Temperature Sensor
+	- This is done by checking if register size is more than 1, if yes, it stores its value by obtaining separate hexadecimal values of the data.
+	- Then checks if the value is neither 0x00 nor 0xFF, it declares it as "Pass" otherwise "Fail". 
+- After the present state of all the devices are recorded, uart initializes USBs' address in the board and baud rate 115200.
+	- Then it checks for existence, if it exists, it shows "Pass" 
+	- Further, it proceeds to check if the message sent and received is same, it is considered as loopback "Pass" and if its not, it is considered as "Fail".
+	- If the file is not found, existence and loopback both are displayed as "Fail".
 
 And all of the data is stored in a file named "TestResult.log".
 
