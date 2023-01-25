@@ -1,14 +1,14 @@
 
-<h1 align="center" style="font-weight: 500;">	
+<h1 align="center" style="font-weight: 700;">	
 	Self Test
 </h1>
 
 # 📝Pre-requisites 📝
 * There should be no device connected to board (like Foot Switch, Laser Beam).
-- TX and RX pins should be shorted beforing connecting.
-- Serial Port baud rate must be set to 115200.
-- All the previous data of the board must be killed.
-- 
+* TX and RX pins should be shorted beforing connecting.
+* Serial Port baud rate must be set to 115200.
+* All the previous data of the board must be killed.
+* 
 
 # :bulb: Overview :bulb:
 This is Self Test for the POC which gives the overview of states of all the devices connected to the board i.e the driver settings of I2C bus.
