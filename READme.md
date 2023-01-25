@@ -30,14 +30,23 @@ The most important characteristics are:
 
 ### 📝 I²C Terminology 📝
 >Transmitter: the device the bus receives data from. A transmitter can be a device that uploads data to the bus on its own (referred to as a "master-transmitter") or one that receives data requests from other devices (referred to as a "slave-transmitter").
+
 >Receiver: the device that receives data from the bus.
+
 >Master: The component that starts a transfer, creates the clock signal, and terminates the transfer. A master can function as both a transmitter and a receiver.
->Slave: the device addressed by the master. A slave can be either receiver or transmitter
+
+>Slave: the device addressed by the master. A slave can be either receiver or transmitter.
+
 >Multi-master: the capacity for multiple masters to share the bus at once without crashing or losing data.
+
 >Arbitration: the predetermined procedure that only permits one master to take control of the bus at a time.
+
 >Synchronization: the predetermined process used to synchronise the clock signals produced by two or more masters.
+
 >SDA: data signal line (Serial DAta)
+
 >SCL: clock signal line (Serial CLock)
+
 ### 💪 I²C Working 💪
 * I²C uses only 2 bi-directional open-drain lines for data communication called SDA and SCL. Both these lines are pulled high. I2C operates in 2 modes - Master mode & Slave mode. Each data bit transferred on SDA line is synchronized by a high to the low pulse of each clock on the SCL line.
 * I2C standards state that the data line can only be altered when the clock line is low and not when it is high. Since the devices on the I2C bus are active low, a pull-up resistor is needed to make the two open drain lines high. 9-bit packets made up of the data are used for transmission. These bits are in the following order:
