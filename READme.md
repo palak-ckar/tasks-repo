@@ -29,5 +29,5 @@ This is Self Test for the Setting Driver of I2C bus which gives the overview of 
 	- Further, it proceeds to check if the message sent and received is same, it is considered as loopback "Pass" and if its not, it is considered as "Fail".
 	- If the file is not found, existence and loopback both are displayed as "Fail".
 
-And all of the data is stored in a file named "TestResult.log".
+And all of the data is stored in a file named "TestResult.log" in the tabular format.
 
