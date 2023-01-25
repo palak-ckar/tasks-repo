@@ -1,6 +1,6 @@
-#<a name="Self Test">
+
 <h1 align="center" style="font-weight: 500;">	
-	Self Test
+	📷Self Test:camera:
 </h1>
 
 # :bulb: Overview
