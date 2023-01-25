@@ -22,9 +22,7 @@ Philips created the I2C bus in the early 1980s to make it simple for components 
 I2C is used to connect components that are connected via cable in addition to being used on single boards. This bus is appealing to many applications because to its simplicity and adaptability.
 
 The most important characteristics are:
-
-• There are only two bus lines required.
-
+	• There are only two bus lines required.
 • There are no strict baud rate specifications, and the master creates a bus clock.
 
 • All elements have basic master/slave interactions. Software addresses each device connected to the bus with a different address.
