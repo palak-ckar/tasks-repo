@@ -23,7 +23,7 @@ I2C is used to connect components that are connected via cable in addition to be
 
 The most important characteristics are:
 
-	• There are only two bus lines required.
+• There are only two bus lines required.
 	
 • There are no strict baud rate specifications, and the master creates a bus clock.
 
@@ -32,3 +32,14 @@ The most important characteristics are:
 • I2C is a genuine multi-master bus that offers collision avoidance and arbitration.
 
 ### I²C Terminology
+>Transmitter: the device the bus receives data from. A transmitter can be a device that uploads data to the bus on its own (referred to as a "master-transmitter") or one that receives data requests from other devices (referred to as a "slave-transmitter").
+>Receiver: the device that receives data from the bus.
+>Master: The component that starts a transfer, creates the clock signal, and terminates the transfer. A master can function as both a transmitter and a receiver.
+>Slave: the device addressed by the master. A slave can be either receiver or transmitter
+>Multi-master: the capacity for multiple masters to share the bus at once without crashing or losing data.
+>Arbitration: the predetermined procedure that only permits one master to take control of the bus at a time.
+>Synchronization: the predetermined process used to synchronise the clock signals produced by two or more masters.
+>SDA: data signal line (Serial DAta)
+>SCL: clock signal line (Serial CLock)
+### I²C Working
+<1> gctdytdy
