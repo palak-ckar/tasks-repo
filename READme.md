@@ -16,7 +16,7 @@ And all of the data is stored in a file named "TestResult.log".
 
 # 🔍Annotation:mag:
 
-## I2C bus or  I²C bus
+## 🚌 I2C bus or  I²C bus 🚌
 Philips created the I2C bus in the early 1980s to make it simple for components that are housed on the same circuit board to communicate with one another. In 2006, Philips Semiconductors switched to NXP. I2C, the name, stands for "Inter IC."
 
 I2C is used to connect components that are connected via cable in addition to being used on single boards. This bus is appealing to many applications because to its simplicity and adaptability.
@@ -28,7 +28,7 @@ The most important characteristics are:
 - All elements have basic master/slave interactions. Software addresses each device connected to the bus with a different address.
 - I2C is a genuine multi-master bus that offers collision avoidance and arbitration.
 
-### I²C Terminology
+### 📝 I²C Terminology 📝
 >Transmitter: the device the bus receives data from. A transmitter can be a device that uploads data to the bus on its own (referred to as a "master-transmitter") or one that receives data requests from other devices (referred to as a "slave-transmitter").
 >Receiver: the device that receives data from the bus.
 >Master: The component that starts a transfer, creates the clock signal, and terminates the transfer. A master can function as both a transmitter and a receiver.
@@ -38,7 +38,7 @@ The most important characteristics are:
 >Synchronization: the predetermined process used to synchronise the clock signals produced by two or more masters.
 >SDA: data signal line (Serial DAta)
 >SCL: clock signal line (Serial CLock)
-### I²C Working
+### 💪 I²C Working 💪
 * I²C uses only 2 bi-directional open-drain lines for data communication called SDA and SCL. Both these lines are pulled high. I2C operates in 2 modes - Master mode & Slave mode. Each data bit transferred on SDA line is synchronized by a high to the low pulse of each clock on the SCL line.
 * I2C standards state that the data line can only be altered when the clock line is low and not when it is high. Since the devices on the I2C bus are active low, a pull-up resistor is needed to make the two open drain lines high. 9-bit packets made up of the data are used for transmission. These bits are in the following order:
 	*  Start Condition – 1 bit
@@ -54,3 +54,12 @@ The most important characteristics are:
 * When all the data is finished the first chip must free up the bus and it does that by a special message called 'STOP'. It is just one bit of information transferred by a special 'wiggling' of the SDA/SCL wires of the bus.
 
 The bus rules say that when data or addresses are being sent, the DATA wire is only allowed to be changed in voltage (so, '1', '0') when the voltage on the clock line is LOW. The 'start' and 'stop' special messages BREAK that rule, and that is how they are recognized as special.
+
+# <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/rocket_1f680.png" width="35"> UART <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/rocket_1f680.png" width="35">
+The UART protocol is an asynchronous transmission protocol. The device using them is the one that needs to pre-agree on a data cost. The machines' clocks should operate at roughly the same data rate. Because more start and stop bits are needed, the data rate in UART is reduced.
+
+The UART's function is to transform the parallel bus of the PC's bytes into a serial bitstream. There is just one wire in the serial cable that exits the serial port for each direction of flow. One bit at a time, the serial port transmits a stream of bits. The bit stream that arrives at the serial port via the external cable, on the other hand, is changed into parallel bytes that the computer can comprehend. Data is handled by UARTs in units of a byte, which is conveniently equal to the size of an ASCII character.
+
+# 🛸 USB 🛸
+USB is the most sophisticated of the buses. Although its transceivers and hardware are rather basic, its software is sophisticated and can effectively support a wide range of applications with a wide range of data rates and requirements. It operates at a rate of 12 Mbps over twisted pair with a 4-pin connector (200 Mbps are planned) (2 wires are power supply). Additionally, it can only go small distances of up to 5 metres (depends on configuration). Although not all bus-compatible devices are supported by Linux, the bus is supported. It communicates in distinct packets like a network and is synchronous. It can connect to multiple devices, just like a network. It grants each device on it a brief period of time-slice exclusivity. Additionally, a device may be promised regular access to the bus. If no other device wants to use it, one device may monopolize it.
+
